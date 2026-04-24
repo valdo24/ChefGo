@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acceso al Sistema</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f2f5;
+        }
+
+        .container {
+            align-content: center;
+            background: rgb(255, 237, 237);
+            padding: 1.5rem;
+            border-radius: 13px;
+            border-color: 30px black;
+            box-shadow: 0 0 6px rgba(54, 54, 54, 0.1);
+            width: 450px;
+            height: 400px;
+
+        }
+
+        h2 {
+            color: #333;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            display: block;
+            width: 450px;
+            padding: 20px;
+            margin: 15px 0;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.3s;
+            text-decoration: none;
+        }
+
+        .btn-login {
+            background-color: #30cf22;
+            color: white;
+        }
+
+        .btn-login:hover {
+            background-color: #189e0c;
+        }
+
+        .btn-signup {
+            background-color: #28a745;
+            color: white;
+        }
+
+        .btn-signup:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <a href="inicio.html"><button class="btn btn-login" onclick="location.href='#login'">
+            Iniciar Sesión
+        </button></a>
+ 
+
+        <a href="crea-cuenta.html"><button class="btn btn-login" onclick="location.href='#login'">
+            crear una cuenta
+        </button></a>
+    </div>
+
+</body>
+</html>
