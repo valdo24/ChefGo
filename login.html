@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,24 +13,28 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            background-color: #f0f2f5;
+            background-color: #dcdfe4;
+            background-image: url(composicion-comida-mexicana-plana-espacio-copia_23-2148140239.avif);
+            background-attachment: fixed;
+            background-size: cover;
+            background-color: rgb(255, 255, 255);
         }
 
         .container {
             align-content: center;
-            background: rgb(255, 237, 237);
+            background: rgb(194, 185, 185);
             padding: 1.5rem;
             border-radius: 13px;
-            border-color: 30px black;
+
             box-shadow: 0 0 6px rgba(54, 54, 54, 0.1);
             width: 450px;
-            height: 400px;
+            height: 470px;
 
         }
 
-        h2 {
-            color: #333;
-            margin-bottom: 2rem;
+        .container a {
+            text-decoration: none;
+
         }
 
         .btn {
@@ -38,16 +43,16 @@
             padding: 20px;
             margin: 15px 0;
             border: none;
-            border-radius: 5px;
+            border-radius: 7px;
             font-size: 16px;
             font-weight: bold;
             cursor: pointer;
             transition: background 0.3s;
-            text-decoration: none;
+
         }
 
         .btn-login {
-            background-color: #30cf22;
+            background-color: #2ab81d;
             color: white;
         }
 
@@ -63,20 +68,92 @@
         .btn-signup:hover {
             background-color: #218838;
         }
+
+        .Logo img {
+            width: 130px;
+
+
+        }
+
+        .Logo {
+            display: block;
+            padding-left: 160px;
+        }
+
+
+        .text-terminos-condiciones {
+            color: #235b8f;
+            font-size: 16px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+        }
+
+        .container-terminos {
+            background-color: #f0ecec;
+            padding: 5px;
+            border-radius: 7px;
+        }
+
+        #checkbox {
+            cursor: pointer;
+            color: black;
+        }
+
+        .container-btn {
+            display: flex;
+        }
     </style>
 </head>
+
 <body>
 
     <div class="container">
-        <a href="inicio.html"><button class="btn btn-login" onclick="location.href='#login'">
-            Iniciar Sesión
-        </button></a>
- 
 
-        <a href="crea-cuenta.html"><button class="btn btn-login" onclick="location.href='#login'">
-            crear una cuenta
-        </button></a>
+        <div class="Logo">
+            <img src="ChefGo!! Logo Final.png" alt="">
+
+        </div>
+
+        <label class="bienvenida">
+            Bienvenido a ChefGo!! conviertete en un gran chef de cocina,con tan solo ingresar
+            en ChefGo!! tus comidas favoritas en un plato ya mismo!!
+
+        </label>
+
+
+
+
+
+        <a href="inicio.html"><button class="btn btn-login" onclick="location.href='#login'">
+                Iniciar Sesión
+            </button></a>
+
+
+        <form action="crea-cuenta.html">
+            <a href="crea-cuenta.html"><button class="btn btn-login" onclick="location.href='#login'">
+                    crear una cuenta
+                </button></a>
+
+            <div class="container-terminos">
+                <label class="text-terminos-condiciones">
+                    Al usar esta app, asumes la responsabilidad por la preparación de las recetas y la verificación de
+                    posibles alérgenos alimentarios. Todos los contenidos y diseños son propiedad de la plataforma,
+                    quedando prohibida su reproducción o uso comercial sin autorización.
+                </label>
+            </div>
+
+            <div class="container-btn">
+                <div class="confirmar-terminos">
+                    <input type="checkbox" id="checkbox" required>
+                </div>
+                <label class="text-confirmar">
+                    confirmar terminos y condiciones
+                </label>
+            </div>
+
+        </form>
     </div>
 
 </body>
+
 </html>
