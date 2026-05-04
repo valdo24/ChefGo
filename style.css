@@ -1,88 +1,201 @@
-*{
-    padding: 0;
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
+body {
+    background-color: rgb(235, 228, 228);
+    font-family: sans-serif;
+}
 
-
-
+/* HEADER */
 .container-banner {
+    display: flex;
     align-items: center;
     justify-content: space-between;
-    display: flex;
-    width: 100%;
-    height: 70px;
     background-color: rgb(122, 199, 77);
+    height: 60px;
+    padding: 0 15px;
+}
+
+.Logo img {
+    width: 60px;
+}
+
+.Logo {
+    display: flex;
+    align-items: center;
 
 
 }
 
-.busqueda input{
+.Logo h1 {
+    font-size: 30px;
+}
+
+
+.busqueda input {
     border-radius: 5px;
     border: none;
-    width: 300px;
-    height: 20px;
+    padding: 5px;
+    width: 350px;
 }
 
-.container-banner img{
-    margin-left: 20px;
-    width: 60px;
-
-}
-
-/* Ocultar checkbox */
-#btn-menu {
-    display: none;
-}
-
-/* Botón menú */
 .btn-menu label {
     font-size: 25px;
     cursor: pointer;
-    margin-right: 30px;
 }
 
-/* Capa oscura */
-.capa {
+/* MENU LATERAL */
+#btn-menu {
+    display: none;
+
+}
+
+.container-menu label {
+    cursor: pointer;
+    margin-left: 280px;
+    font-size: 20px;
+
+}
+
+
+.container-menu {
     position: fixed;
-    width: 100%;
-    height: 100vh;
-    background: rgba(0,0,0,0.5);
+    left: 100%;
     top: 0;
-    left: 0;
+    width: 350px;
+    height: 100vh;
+    background: rgb(187, 185, 185);
+    transition: 0.7s;
+}
+
+.container-menu .cont-menu {
+    margin-top: 50px;
+}
+
+.container-menu a {
+    color: aliceblue;
+    background-color: rgba(119, 119, 119, 0.438);
+    height: 60px;
+    border-radius: 4px;
+    margin-bottom: 40px;
+    box-shadow: 10px 10px 20px rgb(0, 0, 0);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+
+}
+
+.container-menu a:hover {
+    transform: translateY(-20%);
+}
+
+#btn-menu:checked~.container-menu {
+    left: 1050px;
+}
+
+.capa {
     display: none;
 }
 
-/* Contenedor menú */
-.container-menu {
+#btn-menu:checked~.capa {
+    display: block;
     position: fixed;
-    background: #fff;
-    width: 350px;
-    height: 100vh;
-    top: 0;
-    left: -100%;
-    transition: all 0.3s ease;
+    width: 5000px;
+    height: 1500px;
+    background: rgba(0, 0, 0, 0.5);
 }
 
-/* Contenido menú */
-.cont-menu nav a {
-    display: block;
-    padding: 15px;
-    color: #333;
-    text-decoration: none;
+/* GRID MENUS */
+.container-menus {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    padding: 20px;
 }
 
-.cont-menu nav a:hover {
-    background: #f2f2f2;
+/* CARDS */
+.menu {
+    background: rgb(131, 129, 129);
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: 0.3s;
 }
 
-/* Mostrar menú cuando checkbox está activo */
-#btn-menu:checked ~ .container-menu {
-    left: 0;
+/* IMAGEN */
+.menu img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
 }
 
-#btn-menu:checked ~ .capa {
-    display: block;
+/* TITULO */
+.menu p {
+    text-align: center;
+    font-size: 20px;
+    padding: 5px;
+    color: white;
+}
+
+/* INFO OCULTA */
+.menu .info {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: 0.3s;
+    text-align: center;
+    padding: 0 10px;
+    color: white;
+}
+
+/* CUANDO HACEN CLICK */
+.menu.active .info {
+    opacity: 1;
+    max-height: 100px;
+    padding: 10px;
+}
+
+/* EFECTO */
+.menu:hover {
+    transform: scale(1.03);
+}
+
+/* RESPONSIVE */
+@media (max-width: 1357px) {
+    .container-menu {
+        position: fixed;
+        left: 100%;
+        top: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.945);
+        transition: 0.7s;
+    }
+
+    #btn-menu:checked~.container-menu {
+        left: 0px;
+
+    }
+
+    .container-menu label {
+        cursor: pointer;
+        margin-left: 1000px;
+        font-size: 20px;
+
+    }
+
+    #btn-menu:checked~.capa {
+        display: none;
+    }
+
+    .Logo h1 {
+        font-size: 30px;
+    }
 }
 
 
@@ -90,53 +203,114 @@
 
 
 
+@media (max-width: 1000px) {
+    .container-menu {
+        position: fixed;
+        left: 100%;
+        top: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.945);
+        transition: 0.7s;
+    }
 
+    #btn-menu:checked~.container-menu {
+        left: 0px;
 
+    }
 
+    .container-menu label {
+        cursor: pointer;
+        margin-left: 450px;
+        font-size: 20px;
 
+    }
 
+    #btn-menu:checked~.capa {
+        display: none;
+    }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-body{
-    background-color: rgb(235, 228, 228);
+    .Logo h1 {
+        font-size: 25px;
+    }
 }
 
-@media screen and (max-width:300px){
-    
+
+
+
+
+
+@media (max-width: 768px) {
+    .container-menus {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .Logo h1 {
+        font-size: 15px;
+    }
+    .busqueda {
+        margin-left: -30px;
+
+    }
+
+    .busqueda input {
+        padding: 5px;
+        width: 250px;
+
+    }
+}
+
+@media (max-width: 480px) {
+
+    .container-menu {
+        position: fixed;
+        left: 100%;
+        top: 0;
+        width: 100%;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.945);
+        transition: 0.7s;
+    }
+
+    #btn-menu:checked~.container-menu {
+        left: 0px;
+
+    }
+
+    .container-menu label {
+        cursor: pointer;
+        margin-left: 360px;
+        font-size: 20px;
+
+    }
+
+    #btn-menu:checked~.capa {
+        display: none;
+    }
+
+
+    .container-banner img {
+        width: 50px;
+
+    }
+
+    .Logo h1 {
+        font-size: 15px;
+    }
+
+    .busqueda {
+        margin-left: -20px;
+
+    }
+
+    .busqueda input {
+        padding: 5px;
+        width: 200px;
+
+    }
+
+    .container-menus {
+        grid-template-columns: 1fr;
+    }
+
 }
