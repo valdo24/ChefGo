@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quienes Somos</title>
+    <link rel="stylesheet" href="S-N.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="regresar">
+            <a href="pagina-principal.html">Volver</a>
+        </div>
+
+        <div class="presentacion">
+            <h1>Quienes somos</h1>
+            <p>Te presentamos a los desarrolladores</p>
+        </div>
+
+        <div class="perfiles">
+
+            <div class="perfil">
+                <img src="imagenes/perfil-valen.jfif">
+                <p>Valen</p>
+                <div class="info">
+                    Programador FrontEnd y Diseñador.
+                </div>
+            </div>
+
+            <div class="perfil">
+                <img src="imagenes/luciano p.gif">
+                <p>Luciano</p>
+                <div class="info">
+                    Testing.
+                </div>
+            </div>
+
+            <div class="perfil">
+                <img src="imagenes/agustin p.jfif">
+                <p>Agustin</p>
+                <div class="info">
+                    Programador BackEnd.
+                </div>
+            </div>
+
+            <div class="perfil">
+                <img src="imagenes/nicolas p.jfif">
+                <p>Nicolas</p>
+                <div class="info">
+                    Líder y Documentación.
+                </div>
+            </div>
+
+            <div class="perfil">
+                <img src="imagenes/dylan p.jfif">
+                <p>Dylan</p>
+                <div class="info">
+                    Programador de Base de Datos.
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="container-presentacion">
+
+            <label>
+                Bienvenido a nuestro equipo de desarrollo,con nuestra capacidad 
+                de trabajar en equipo podemos brindarle un muy buen servicio 
+                con nuestros usuarios,somos tu mejor opcion de recetas de comidas
+                de cualquier tipo,claramente porque conocemos a nuestros 
+                mejores clientes,entonces le damos una buena experiencia para que 
+                tener un buen (desayuno,almuerzo,merienda,picada y cena).
+            </label>
+
+
+
+
+        </div>
+
+
+    <!-- JAVASCRIPT -->
+    <script>
+
+        const perfiles = document.querySelectorAll(".perfil");
+
+        perfiles.forEach((card) => {
+
+            card.addEventListener("click", () => {
+
+                // cerrar los otros
+                perfiles.forEach(c => c.classList.remove("active"));
+
+                // abrir el seleccionado
+                card.classList.add("active");
+
+            });
+
+        });
+
+    </script>
+
+</body>
+
+</html>

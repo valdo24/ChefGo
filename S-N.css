@@ -1,0 +1,166 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: system-ui;
+    background-image: url(image.png);
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    color: azure;
+    font-size: 40px;
+}
+
+p {
+    padding-top: 10px;
+    padding-bottom: 20px;
+    font-size: 20px;
+    color: aliceblue;
+}
+
+.presentacion {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.perfiles {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+/* PERFIL */
+.perfil {
+    width: 180px;
+    
+
+    background: rgb(131, 131, 131);
+    border-radius: 15px;
+    padding: 15px;
+
+    cursor: pointer;
+    transition: 0.3s;
+
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.perfil:hover {
+    transform: scale(1.05);
+}
+
+.perfil img {
+    width: 100px;
+    height: 100px;
+
+    object-fit: cover;
+    border-radius: 50%;
+
+    display: block;
+    margin: auto;
+}
+
+.perfil p {
+    text-align: center;
+    font-size: 20px;
+    padding: 10px;
+
+    color: rgb(0, 0, 0);
+
+    font-family: 'Trebuchet MS',
+                 'Lucida Sans Unicode',
+                 'Lucida Grande',
+                 'Lucida Sans',
+                 Arial,
+                 sans-serif;
+}
+
+/* INFO */
+.info {
+    opacity: 0;
+
+    max-height: 0; 
+
+    overflow: hidden;
+
+    transform: translateY(-10px);
+
+    transition: all 0.4s ease;
+
+    text-align: center;
+
+    margin-top: auto;
+}
+
+/* CUANDO HACEN CLICK */
+.perfil.active .info {
+    opacity: 1;
+
+    max-height: 100px;
+
+    transform: translateY(0);
+
+    padding-top: 10px;
+}
+
+/* BOTON REGRESAR */
+.regresar a {
+    position: absolute;
+
+    left: 5px;
+    top: 15px;
+
+    text-decoration: none;
+
+    padding: 10px;
+
+    background-color: rgb(206, 206, 206);
+
+    border-radius: 5px;
+
+    color: black;
+
+    transition: 1s;
+}
+
+.regresar a:hover {
+    background-color: aliceblue;
+}
+
+/* PRESENTACION */
+.container-presentacion {
+    margin: 100px;
+
+    background-color: beige;
+
+    padding: 15px;
+
+    border-radius: 10px;
+
+    width: 85%;
+    height: 200px;
+
+    align-items: center;
+
+}
+
+.container-presentacion label{
+    font-size: 23px;
+    font-family: Arial, Helvetica, sans-serif;
+}
