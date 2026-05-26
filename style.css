@@ -19,21 +19,18 @@ body {
     padding: 0 15px;
 }
 
-.Logo img {
-    width: 55px;
-}
-
 .Logo {
     display: flex;
     align-items: center;
+}
 
-
+.Logo img {
+    width: 55px;
 }
 
 .Logo h1 {
     font-size: 30px;
 }
-
 
 .busqueda input {
     border-radius: 5px;
@@ -50,16 +47,7 @@ body {
 /* MENU LATERAL */
 #btn-menu {
     display: none;
-
 }
-
-.container-menu label {
-    cursor: pointer;
-    margin-left: 280px;
-    font-size: 20px;
-
-}
-
 
 .container-menu {
     padding: 1px;
@@ -70,10 +58,22 @@ body {
     height: 100vh;
     background: rgb(134, 134, 134);
     transition: 0.7s;
+    z-index: 1000;
+}
+
+/* X DEL MENU */
+.container-menu label {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+
+    cursor: pointer;
+    font-size: 20px;
+    color: rgb(0, 0, 0);
 }
 
 .container-menu .cont-menu {
-    margin-top: 50px;
+    margin-top: 80px;
 }
 
 .container-menu a {
@@ -88,15 +88,14 @@ body {
     align-items: center;
     justify-content: center;
     transition: 0.3s;
-
 }
 
 .container-menu a:hover {
-    transform: translateY(-20%);
+    transform: translateY(-10%);
 }
 
 #btn-menu:checked~.container-menu {
-    left: 1050px;
+    left: calc(100% - 350px);
 }
 
 .capa {
@@ -106,9 +105,9 @@ body {
 #btn-menu:checked~.capa {
     display: block;
     position: fixed;
-    width: 5000px;
-    height: 1500px;
+    inset: 0;
     background: rgba(0, 0, 0, 0.5);
+    z-index: 500;
 }
 
 /* GRID MENUS */
@@ -127,7 +126,50 @@ body {
     overflow: hidden;
     cursor: pointer;
     transition: 0.3s;
+}
 
+/* EFECTO */
+.menu:hover {
+    transform: scale(1.03);
+}
+
+/* CARD ACTIVA */
+.menu.active {
+    transform: scale(1.05);
+    box-shadow: 0px 0px 20px rgba(0,0,0,0.4);
+}
+
+/* COLORES POR CARD */
+.menu:nth-child(1).active {
+    background: rgb(192, 121, 39);
+}
+
+.menu:nth-child(2).active {
+    background: rgb(122, 71, 32);
+}
+
+.menu:nth-child(3).active {
+    background: rgb(199, 176, 73);
+}
+
+.menu:nth-child(4).active {
+    background: rgb(122, 59, 59);
+}
+
+.menu:nth-child(5).active {
+    background: rgb(185, 124, 44);
+}
+
+.menu:nth-child(6).active {
+    background: rgb(209, 114, 130);
+}
+
+.menu:nth-child(7).active {
+    background: rgb(160, 115, 64);
+}
+
+.menu:nth-child(8).active {
+    background: rgb(95, 58, 32);
 }
 
 /* IMAGEN */
@@ -145,7 +187,7 @@ body {
     color: rgb(209, 209, 209);
 }
 
-/* INFO OCULTA */
+/* INFO */
 .menu .info {
     opacity: 0;
     max-height: 0;
@@ -156,81 +198,25 @@ body {
     color: rgb(230, 230, 230);
 }
 
-/* CUANDO HACEN CLICK */
 .menu.active .info {
     opacity: 1;
     max-height: 100px;
     padding: 10px;
 }
 
-/* EFECTO */
-.menu:hover {
-    transform: scale(1.03);
-}
-
 /* RESPONSIVE */
-@media (max-width: 1357px) {
-    .container-menu {
-        position: fixed;
-        left: 100%;
-        top: 0;
-        width: 100%;
-        height: 100vh;
-        background: rgba(0, 0, 0, 0.945);
-        transition: 0.7s;
-    }
-
-    #btn-menu:checked~.container-menu {
-        left: 0px;
-
-    }
-
-    .container-menu label {
-        cursor: pointer;
-        margin-left: 1000px;
-        font-size: 20px;
-
-    }
-
-    #btn-menu:checked~.capa {
-        display: none;
-    }
-
-    .Logo h1 {
-        font-size: 30px;
-    }
-}
-
-
-
-
-
-
 @media (max-width: 1000px) {
+
+    .container-menus {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
     .container-menu {
-        position: fixed;
-        left: 100%;
-        top: 0;
         width: 100%;
-        height: 100vh;
-        background: rgba(0, 0, 0, 0.945);
-        transition: 0.7s;
     }
 
     #btn-menu:checked~.container-menu {
-        left: 0px;
-
-    }
-
-    .container-menu label {
-        cursor: pointer;
-        margin-left: 450px;
-        font-size: 20px;
-
-    }
-
-    #btn-menu:checked~.capa {
-        display: none;
+        left: 0;
     }
 
     .Logo h1 {
@@ -238,15 +224,7 @@ body {
     }
 }
 
-
-
-
-
-
 @media (max-width: 768px) {
-    .container-menus {
-        grid-template-columns: repeat(2, 1fr);
-    }
 
     .Logo h1 {
         font-size: 15px;
@@ -254,48 +232,17 @@ body {
 
     .busqueda {
         margin-left: -30px;
-
     }
 
     .busqueda input {
-        padding: 5px;
         width: 250px;
-
     }
 }
 
 @media (max-width: 480px) {
 
-    .container-menu {
-        position: fixed;
-        left: 100%;
-        top: 0;
-        width: 100%;
-        height: 100vh;
-        background: rgba(0, 0, 0, 0.945);
-        transition: 0.7s;
-    }
-
-    #btn-menu:checked~.container-menu {
-        left: 0px;
-
-    }
-
-    .container-menu label {
-        cursor: pointer;
-        margin-left: 360px;
-        font-size: 20px;
-
-    }
-
-    #btn-menu:checked~.capa {
-        display: none;
-    }
-
-
     .container-banner img {
         width: 50px;
-
     }
 
     .Logo h1 {
@@ -304,25 +251,20 @@ body {
 
     .busqueda {
         margin-left: -20px;
-
     }
 
     .busqueda input {
-        padding: 5px;
         width: 200px;
-
     }
 
     .container-menus {
         grid-template-columns: 1fr;
     }
-
 }
 
-
 @media (max-width: 380px) {
+
     .Logo h1 {
         display: none;
     }
-
 }
